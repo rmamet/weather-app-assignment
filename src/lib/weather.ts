@@ -3,6 +3,15 @@
 // Author: T. Hinkle / GPT-5
 
 export interface ForecastPeriod {
+	isDaytime: boolean;
+	relativeHumidity: {
+		unitCode: string;
+		value: number;
+	};
+	probabilityOfPrecipitation: {
+		unitCode: string;
+		value: number;
+	};
 	name: string;
 	startTime: string;
 	endTime: string;
@@ -36,7 +45,7 @@ export interface PointInfo {
  */
 async function getPoint(lat: number, lon: number): Promise<PointInfo> {
 	const res = await fetch(`https://api.weather.gov/points/${lat},${lon}`, {
-		headers: { 'User-Agent': 'weather-demo (yourname@example.com)' }
+		headers: { 'User-Agent': 'weather-demo (rmamet@rmamet.xyz)' }
 	});
 	if (!res.ok) throw new Error(`Failed to fetch point (${res.status})`);
 	const data = await res.json();
@@ -62,8 +71,8 @@ async function getPoint(lat: number, lon: number): Promise<PointInfo> {
 export async function getForecast(lat: number, lon: number): Promise<WeatherResponse> {
 	const point = await getPoint(lat, lon);
 	console.log('Point info for location: ', point);
-	const res = await fetch(point.forecastUrl, {
-		headers: { 'User-Agent': 'weather-demo (yourname@example.com)' }
+	const res = await fetch(point.forecastHourlyUrl, {
+		headers: { 'User-Agent': 'weather-demo (rmamet@rmamet.xyz)' }
 	});
 	if (!res.ok) throw new Error(`Forecast fetch failed (${res.status})`);
 	const data = await res.json();

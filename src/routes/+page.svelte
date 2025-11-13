@@ -25,7 +25,13 @@
 		longitude = -122.4194;
 	}}>Get San Francisco Weather</button
 >
-
+<button onclick={() => {
+	if (navigator.geolocation) {
+    	navigator.geolocation.getCurrentPosition((position)=>{latitude=position.coords.latitude;longitude=position.coords.longitude}, ()=>{alert("Location is disabled on this device. Please enable it, and try again")});
+  	} else { 
+    	alert("Geolocation is not supported by this browser.");
+  	}
+}}>Get Current Location Weather</button>
 {#if latitude !== null && longitude !== null}
 	<h1>Weather for ({latitude}, {longitude})</h1>
 	<CurrentWeather {latitude} {longitude} />
