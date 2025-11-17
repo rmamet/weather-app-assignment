@@ -5,37 +5,37 @@
 export interface ForecastPeriod {
 	isDaytime: boolean;
 	relativeHumidity: {
-		unitCode: string;
+		unitCode: string | null;
 		value: number;
 	};
 	probabilityOfPrecipitation: {
-		unitCode: string;
+		unitCode: string | null;
 		value: number;
 	};
-	name: string;
-	startTime: string;
-	endTime: string;
+	name: string | null;
+	startTime: string | null;
+	endTime: string | null;
 	temperature: number;
-	temperatureUnit: string;
-	shortForecast: string;
-	detailedForecast: string;
-	icon: string;
+	temperatureUnit: string | null;
+	shortForecast: string | null;
+	detailedForecast: string | null;
+	icon: string | null;
 }
 
 export interface WeatherResponse {
-	updated: string;
+	updated: string | null;
 	periods: ForecastPeriod[];
 }
 
 export interface PointInfo {
-	office: string;
+	office: string | null;
 	gridX: number;
 	gridY: number;
-	forecastUrl: string;
+	forecastUrl: string | null;
 	forecastHourlyUrl: string;
 	location: {
-		city: string;
-		state: string;
+		city: string | null;
+		state: string | null;
 		coordinates: [number, number]; // [lon, lat]
 	};
 }
