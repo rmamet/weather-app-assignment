@@ -13,7 +13,7 @@
 		data.periods[0].probabilityOfPrecipitation.value > 50,
 		data.periods[0].temperature < 68,
 		data.periods[0].relativeHumidity.value < 80,
-		data.periods[0].isDaytime
+		!data.periods[0].isDaytime
 	]}
 	<div class="weather-container">
 		<img

@@ -15,16 +15,16 @@ Options:
 ## RUBRIC:
 
 1. Beauty & Design:
-   - Is the App immediately visually appealing?
-   - Do you have a consistent visual style and design language (color, icons, typography, etc)
+   [x] Is the App immediately visually appealing?
+   [x] Do you have a consistent visual style and design language (color, icons, typography, etc)
 2. Functionality and UX:
-   - Does the app work well?
-   - Is it easy to use and understand?
-   - Does the user need instructions (bad) or can they immediately understand how to use it (good)?
-   - Do you handle API errors and delays gracefully (loading states, error messages, etc)?
-   - Do you cache data where appropriate to avoid excessive API calls and improve performance? (we should be able to store data in localStorage to provide a more instantaneous experience on repeat visits).
+   [x] Does the app work well?
+   [x] Is it easy to use and understand?
+   [x] Does the user need instructions (bad) or can they immediately understand how to use it (good)?
+   [x] Do you handle API errors and delays gracefully (loading states, error messages, etc)?
+   [ ] Do you cache data where appropriate to avoid excessive API calls and improve performance? (we should be able to store data in localStorage to provide a more instantaneous experience on repeat visits).
 3. Responsive design
-   - Your app should be optimized for mobile (most likely user for a weather app) but also work well on desktop, etc.
+   [x] Your app should be optimized for mobile (most likely user for a weather app) but also work well on desktop, etc.
 
 ## Extensions
 
