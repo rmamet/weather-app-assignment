@@ -28,7 +28,9 @@
 			}
 		}}>Get Current Location Weather</button
 	>
-	<span>or</span>
+</div>
+<span class="buttons-n-stuff">or</span>
+<span class="buttons-n-stuff">
 	<input
 		type="text"
 		id="latitude"
@@ -53,7 +55,7 @@
 			longitude = tempLong;
 		}}>Get Weather</button
 	>
-</div>
+</span>
 {#if latitude !== null && longitude !== null}
 	<!-- <h1>Weather for ({latitude}, {longitude})</h1> -->
 	<CurrentWeather {latitude} {longitude} />
